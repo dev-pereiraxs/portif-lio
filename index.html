@@ -17,10 +17,10 @@
         theme: {
           extend: {
             colors: {
-              primary: "#0067D4",
-              secondary: "#0B0D12",
-              dark: "#0B0D12",
-              darker: "#0F1F3D",
+              primary: "#4F46E5",
+              secondary: "#7C3AED",
+              dark: "#070B14",
+              darker: "#0F172A",
             },
             fontFamily: {
               sans: ["Inter", "sans-serif"],
@@ -34,50 +34,54 @@
       @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
       :root {
-        --primary: #0067d4;
-        --accent-dark: #004a9f;
+        --primary: #4f46e5;
+        --accent-dark: #7c3aed;
 
-        --bg: #0b0d12;
+        --bg: #070b14;
         --text: #ffffff;
         --text-muted: rgba(255, 255, 255, 0.72);
 
-        --darker-bg: #0f1f3d;
+        --darker-bg: #0f172a;
 
-        --card-bg-gradient: linear-gradient(145deg, #0b0d12, #0f1f3d);
-        --card-surface: #0f1420;
-        --card-border: #162b55;
+        --card-bg-gradient: linear-gradient(145deg, #0a0f1f, #141b3a, #24164d);
 
-        --input-bg: #0f1f3d;
-        --input-border: #1f3f7a;
+        --card-surface: #111827;
+        --card-border: rgba(124, 58, 237, 0.35);
 
-        --nav-bg: rgba(11, 13, 18, 0.75);
-        --footer-bg: linear-gradient(135deg, #0b0d12, #0f1f3d);
+        --input-bg: #0f172a;
+        --input-border: rgba(79, 70, 229, 0.45);
 
-        --icon-color: #ffffff;
+        --nav-bg: rgba(7, 11, 20, 0.85);
+
+        --footer-bg: linear-gradient(135deg, #0a0f1f, #1a1b4b, #3b0764);
+
+        --icon-color: #fff;
         --icon-filter: invert(1);
       }
 
       html.light {
-        --bg: #f2f7ff;
-        --text: #0a0a0a;
-        --text-muted: rgba(0, 0, 0, 0.65);
+        --bg: #f4f7ff;
+        --text: #111827;
+        --text-muted: rgba(17, 24, 39, 0.7);
 
-        --primary: #0067d4;
-        --accent-dark: #004a9f;
+        --primary: #4f46e5;
+        --accent-dark: #7c3aed;
 
-        --darker-bg: #dcebff;
+        --darker-bg: #e8ecff;
 
-        --card-bg-gradient: linear-gradient(145deg, #ffffff, #dcebff);
+        --card-bg-gradient: linear-gradient(145deg, #ffffff, #eef2ff, #e9d5ff);
+
         --card-surface: #ffffff;
-        --card-border: rgba(0, 103, 212, 0.45);
+        --card-border: rgba(124, 58, 237, 0.25);
 
         --input-bg: #ffffff;
-        --input-border: rgba(0, 103, 212, 0.55);
+        --input-border: rgba(79, 70, 229, 0.35);
 
-        --nav-bg: rgba(242, 247, 255, 0.92);
-        --footer-bg: linear-gradient(135deg, #0067d4, #004a9f);
+        --nav-bg: rgba(255, 255, 255, 0.9);
 
-        --icon-color: #000000;
+        --footer-bg: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+        --icon-color: #000;
         --icon-filter: invert(0);
       }
 
@@ -90,33 +94,47 @@
         font-family: "Inter", sans-serif;
         background-color: var(--bg);
         color: var(--text);
-        transition:
-          background-color 220ms ease,
-          color 220ms ease;
+        transition: 0.3s;
       }
 
       .gradient-text {
-        background: linear-gradient(90deg, var(--primary), var(--accent-dark));
+        background: linear-gradient(90deg, #60a5fa, #4f46e5, #7c3aed, #a855f7);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
       }
 
       .card-hover {
-        transition: all 0.3s ease;
+        transition: 0.3s;
       }
 
       .card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 14px 32px rgba(0, 103, 212, 0.25);
+        transform: translateY(-8px);
+        box-shadow:
+          0 0 25px rgba(79, 70, 229, 0.35),
+          0 0 50px rgba(124, 58, 237, 0.25);
       }
 
       .project-card {
         background: var(--card-bg-gradient);
+
+        border: 1px solid rgba(124, 58, 237, 0.25);
+
         box-shadow:
-          6px 6px 20px rgba(0, 0, 0, 0.35),
-          -6px -6px 20px rgba(0, 103, 212, 0.15);
-        transition: all 220ms ease;
+          0 10px 30px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(79, 70, 229, 0.15),
+          0 0 40px rgba(124, 58, 237, 0.1);
+
+        transition: 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+
+        box-shadow:
+          0 15px 40px rgba(0, 0, 0, 0.5),
+          0 0 30px rgba(79, 70, 229, 0.4),
+          0 0 60px rgba(124, 58, 237, 0.3);
       }
 
       nav.fixed {
@@ -135,8 +153,10 @@
         height: 2px;
         bottom: -2px;
         left: 0;
-        background: linear-gradient(90deg, var(--primary), var(--accent-dark));
-        transition: width 0.3s ease;
+
+        background: linear-gradient(90deg, #2563eb, #4f46e5, #7c3aed);
+
+        transition: 0.3s;
       }
 
       .nav-link:hover::after,
@@ -152,48 +172,59 @@
         border-radius: 50%;
         left: -7.5px;
         top: 0;
-        background: linear-gradient(135deg, var(--primary), var(--accent-dark));
+
+        background: linear-gradient(135deg, #4f46e5, #7c3aed);
       }
 
       .skill-bar {
         height: 8px;
         border-radius: 4px;
-        background-color: var(--darker-bg);
+        background: #1e293b;
       }
 
       .skill-progress {
         height: 100%;
         border-radius: 4px;
-        background: linear-gradient(90deg, var(--primary), var(--accent-dark));
+
+        background: linear-gradient(90deg, #2563eb, #4f46e5, #7c3aed);
+
         transition: width 1s ease-in-out;
       }
 
       .contact-input {
-        background-color: var(--input-bg);
+        background: var(--input-bg);
         border: 1px solid var(--input-border);
         color: var(--text);
-        transition: all 0.3s ease;
+        transition: 0.3s;
       }
 
       .contact-input:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 4px rgba(0, 103, 212, 0.22);
+        border-color: #7c3aed;
+
+        box-shadow:
+          0 0 0 4px rgba(124, 58, 237, 0.15),
+          0 0 20px rgba(124, 58, 237, 0.2);
+
         outline: none;
       }
 
       .btn-primary {
-        background: linear-gradient(90deg, var(--primary), var(--accent-dark));
-        color: #ffffff;
-        transition: all 0.22s ease;
+        background: linear-gradient(135deg, #2563eb, #4f46e5, #7c3aed);
+
+        color: #fff;
+        transition: 0.3s;
       }
 
       .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 22px rgba(0, 103, 212, 0.4);
+        transform: translateY(-3px);
+
+        box-shadow:
+          0 0 25px rgba(79, 70, 229, 0.6),
+          0 0 50px rgba(124, 58, 237, 0.4);
       }
 
       .social-icon {
-        transition: all 0.2s ease;
+        transition: 0.3s;
       }
 
       .social-icon,
@@ -209,8 +240,8 @@
       }
 
       .social-icon:hover {
-        transform: translateY(-3px);
-        color: var(--accent-dark);
+        color: #a855f7;
+        transform: translateY(-4px);
       }
 
       @keyframes float {
@@ -231,18 +262,24 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
+
         padding: 0.35rem;
         border-radius: 0.5rem;
+
         cursor: pointer;
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        background: rgba(79, 70, 229, 0.1);
+
+        border: 1px solid rgba(124, 58, 237, 0.3);
+
         color: var(--text);
-        transition: all 0.15s ease;
+
+        transition: 0.3s;
       }
 
       .theme-toggle:hover {
         transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.25);
       }
 
       .theme-toggle svg {
@@ -252,12 +289,13 @@
 
       footer {
         background: var(--footer-bg);
-        color: #ffffff;
+        color: #fff;
       }
 
       .bg-dark {
         background-color: var(--bg) !important;
       }
+
       .bg-darker {
         background-color: var(--darker-bg) !important;
       }
@@ -275,15 +313,16 @@
       .bg-slate-800 {
         background-color: var(--card-surface) !important;
       }
+
       .border-slate-800 {
         border-color: var(--card-border) !important;
       }
+
       .bg-slate-700 {
-        background-color: rgba(0, 103, 212, 0.15) !important;
+        background-color: rgba(124, 58, 237, 0.15) !important;
       }
     </style>
   </head>
-
 
   <body class="bg-dark text-slate-200">
     <nav class="fixed w-full bg-darker/80 backdrop-blur-sm z-50 shadow-lg">
@@ -435,8 +474,8 @@
             Frontend Developer
           </h2>
           <p class="text-lg mb-8 text-slate-400 max-w-lg">
-            Atualmente, tenho 20 anos, sou Desenvolvedor Front-End, estudante de
-            Gestão de Tecnologia da Informação e Técnico em Informática.
+            Atualmente, tenho 20 anos, sou Desenvolvedor Front-End, tenho formação como Técnico em Informática
+            pelo SENAC e estudo Gestão de T.I na UNICESUMAR.
           </p>
           <div class="flex space-x-4">
             <a
@@ -453,7 +492,7 @@
 
           <div class="flex mt-8 space-x-4">
             <a
-              href="https://github.com/drezinnxs10"
+              href="https://github.com/dev-pereiraxs"
               target="_blank"
               class="social-icon text-xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-primary"
             >
@@ -469,7 +508,7 @@
             </a>
 
             <a
-              href="https://www.instagram.com/_drezinnxs10"
+              href="https://www.instagram.com/_pereiraxs.a"
               target="_blank"
               class="social-icon text-xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-primary"
             >
@@ -483,7 +522,7 @@
               class="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary blur-xl opacity-20"
             ></div>
             <img
-              src="Images/foto-profissional.png"
+              src="Images/imagem_eu.jpeg"
               alt="Profile"
               class="relative w-full h-full object-cover rounded-full border-4 border-slate-800 floating"
             />
@@ -507,16 +546,11 @@
           <h3 class="text-2xl font-bold mb-8">Quem sou eu?</h3>
 
           <p class="text-slate-400 mb-8">
-            Sou um desenvolvedor front-end apaixonado por tecnologia e focado na
-            criação de aplicações web modernas, funcionais e visualmente
-            atrativas. Estou no início da minha trajetória profissional, mas já
-            possuo uma base sólida em JavaScript, além de experiência com React,
-            TypeScript e frameworks CSS modernos. Tenho grande interesse em
-            desenvolver interfaces intuitivas, responsivas e performáticas,
-            sempre buscando aplicar boas práticas de código, organização e
-            usabilidade. Estou em constante aprendizado, evoluindo minhas
-            habilidades técnicas para entregar soluções cada vez mais eficientes
-            e alinhadas às necessidades dos usuários.
+            Desenvolvedor Front-End focado na criação de interfaces modernas, responsivas e centradas na experiência
+            do usuário (UI/UX). Trabalho com React, JavaScript, TypeScript e Tailwind CSS para desenvolver aplicações web
+            performáticas e visualmente atraentes. Também possuo experiência com Python, MySQL, hospedagem e deploy de
+            aplicações, unindo design, tecnologia e funcionalidade para criar soluções digitais eficientes e de alta qualidade.
+
           </p>
 
           <div
@@ -583,16 +617,16 @@
             <div class="space-y-6">
               <div>
                 <div class="flex justify-between mb-2">
-                  <span class="font-medium">HTML/CSS</span>
+                  <span class="font-medium">HTML/CSS/JS</span>
                   <span>90%</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 95%"></div>
+                  <div class="skill-progress" style="width: 90%"></div>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between mb-2">
-                  <span class="font-medium">JavaScript</span>
+                  <span class="font-medium">React</span>
                   <span>70%</span>
                 </div>
                 <div class="skill-bar">
@@ -601,16 +635,16 @@
               </div>
               <div>
                 <div class="flex justify-between mb-2">
-                  <span class="font-medium">React</span>
-                  <span>45%</span>
+                  <span class="font-medium">MySQL</span>
+                  <span>65%</span>
                 </div>
                 <div class="skill-bar">
-                  <div class="skill-progress" style="width: 45%"></div>
+                  <div class="skill-progress" style="width: 65%"></div>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between mb-2">
-                  <span class="font-medium">TypeScript</span>
+                  <span class="font-medium">Python</span>
                   <span>50%</span>
                 </div>
                 <div class="skill-bar">
@@ -663,86 +697,93 @@
           </div>
         </div>
 
-        <div class="mt-16">
-          <h3 class="text-2xl font-bold mb-8 text-center">
-            Ferramentas & <span class="gradient-text">Tecnologias</span>
-          </h3>
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
-          >
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
-              <span>HTML5</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
-              <span>CSS3</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
-              <span>JavaScript</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-react text-4xl text-blue-400 mb-2"></i>
-              <span>React</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
-              <span>Node.js</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
-              <span>MySQL</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fas fa-code text-4xl text-indigo-400 mb-2"></i>
-              <span>C</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
-              <span>WordPress</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fas fa-terminal text-4xl text-gray-300 mb-2"></i>
-              <span>VS Code</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-linux text-4xl text-white mb-2"></i>
-              <span>Linux</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fas fa-microchip text-4xl text-cyan-400 mb-2"></i>
-              <span>Arduino</span>
-            </div>
-            <div
-              class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-            >
-              <i class="fab fa-python text-4xl text-yellow-400 mb-2"></i>
-              <span>Python</span>
-            </div>
-          </div>
+        <<div
+  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+>
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+    <span>HTML5</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+    <span>CSS3</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
+    <span>JavaScript</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-react text-4xl text-cyan-400 mb-2"></i>
+    <span>React</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
+    <span>Node.js</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
+    <span>MySQL</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fas fa-code text-4xl text-indigo-400 mb-2"></i>
+    <span>C</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
+    <span>WordPress</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fas fa-wind text-4xl text-cyan-400 mb-2"></i>
+    <span>Tailwind CSS</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-java text-4xl text-orange-500 mb-2"></i>
+    <span>Java</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fas fa-microchip text-4xl text-cyan-400 mb-2"></i>
+    <span>Arduino</span>
+  </div>
+
+  <div
+    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
+  >
+    <i class="fab fa-python text-4xl text-yellow-400 mb-2"></i>
+    <span>Python</span>
+  </div>
+</div>
         </div>
       </div>
     </section>
@@ -762,16 +803,19 @@
           <div class="project-card rounded-xl overflow-hidden card-hover">
             <div class="h-48 overflow-hidden">
               <img
-                src="Images/block run.png"
+                src="Images/sf.png"
                 alt="Project 1"
                 class="w-full h-full object-cover"
               />
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Block Run</h3>
+              <h3 class="text-xl font-bold mb-2">Serviço Fácil</h3>
               <p class="text-slate-400 mb-4">
-                Meu primeiro jogo utilizando conceitos básicos de JavaScript
-                (ainda em desenvolvimento)
+              Plataforma web desenvolvida para conectar clientes e prestadores de serviços.
+              O projeto foi construído com HTML, CSS, JavaScript, Tailwind CSS, Python (Flask)
+              e MySQL, focando em responsividade, usabilidade e integração com banco de dados.
+
+
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
@@ -786,7 +830,7 @@
               </div>
               <div class="flex space-x-3">
                 <a
-                  href="https://drezinnxs10.github.io/Basic_Game/"
+                  href="https://projeto-integrador-4aw2.onrender.com"
                   target="_blank"
                   class="text-primary hover:text-secondary"
                 >
@@ -807,8 +851,10 @@
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">One Pages</h3>
               <p class="text-slate-400 mb-4">
-                Site com tema fã club do Homem Aranha, desenvolvido no SENAC,
-                aplicando conceitos gerais de HTML e CSS
+                Site One Page desenvolvido no SENAC com temática do Homem-Aranha,
+                utilizando HTML, CSS e JavaScript. O projeto teve como foco a criação
+                de uma interface visual atrativa, responsiva e interativa, aplicando conceitos
+                fundamentais de desenvolvimento Front-End e experiência do usuário.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
@@ -820,7 +866,7 @@
               </div>
               <div class="flex space-x-3">
                 <a
-                  href="https://drezinnxs10.github.io/Spider/"
+                  href=" https://dev-pereiraxs.github.io/Spider/"
                   target="_blank"
                   class="text-primary hover:text-secondary"
                 >
@@ -833,7 +879,7 @@
           <div class="project-card rounded-xl overflow-hidden card-hover">
             <div class="h-48 overflow-hidden">
               <img
-                src="Images/Projeto site.jpg"
+                src="Images/nutrivision.jpg"
                 alt="Project 3"
                 class="w-full h-full object-cover"
               />
@@ -841,10 +887,10 @@
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Lading Page</h3>
               <p class="text-slate-400 mb-4">
-                Primeiro projeto desenvolvido para um cliente real, um breve
-                site educacional de vendas para apresentação escolar. O site
-                contém conceitos avançados de HTML e CSS e um pouco de
-                JavaScript
+                Lading Pages, um site web desenvolvido para um cliente real,
+                um breve site educacional de vendas de produtos acadêmicos para
+                apresentação escolar. O site é composto pelas principais linguagens
+                front-end, HTML, CSS e JavaScript e framework com o bootstrap.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
@@ -859,7 +905,7 @@
               </div>
               <div class="flex space-x-3">
                 <a
-                  href="https://drezinnxs10.github.io/Lading_Pages/"
+                  href="https://dev-pereiraxs.github.io/Lading_Pages/"
                   target="_blank"
                   class="text-primary hover:text-secondary"
                 >
@@ -872,7 +918,7 @@
 
         <div class="text-center mt-12">
           <a
-            href="https://github.com/drezinnxs10?tab=repositories"
+            href="https://github.com/dev-pereiraxs?tab=repositories"
             class="px-8 py-3 rounded-full btn-primary font-medium inline-flex items-center"
           >
             Mais projetos <i class="fas fa-arrow-right ml-2"></i>
@@ -938,7 +984,7 @@
               <h4 class="font-bold mb-4">Siga-me</h4>
               <div class="flex mt-8 space-x-4">
                 <a
-                  href="https://github.com/drezinnxs10"
+                  href="https://github.com/dev-pereiraxs"
                   target="_blank"
                   class="social-icon text-xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-primary"
                 >
@@ -954,7 +1000,7 @@
                 </a>
 
                 <a
-                  href="https://www.instagram.com/_drezinnxs10"
+                  href="https://www.instagram.com/_pereiraxs.a"
                   target="_blank"
                   class="social-icon text-xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-primary"
                 >
@@ -1055,7 +1101,7 @@
             </a>
 
             <a
-              href="https://www.instagram.com/_drezinnxs10"
+              href="https://www.instagram.com/_pereiraxs.a"
               target="_blank"
               class="social-icon text-xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-800 hover:bg-primary"
             >
