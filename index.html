@@ -321,6 +321,25 @@
       .bg-slate-700 {
         background-color: rgba(124, 58, 237, 0.15) !important;
       }
+
+      /* ── MOBILE MENU FIX ── */
+      #mobile-menu .mobile-menu-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      #mobile-menu .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      #mobile-menu .mobile-theme-btn {
+        margin-top: 16px;
+      }
     </style>
   </head>
 
@@ -398,16 +417,17 @@
           </div>
         </div>
 
+        <!-- MOBILE MENU: links à esquerda, botão de tema embaixo -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-          <div class="flex items-center justify-between mb-3 px-2">
-            <div class="flex-col space-y-3">
+          <div class="mobile-menu-inner">
+            <div class="mobile-nav-links">
               <a href="#home" class="block py-2 nav-link active">Início</a>
               <a href="#about" class="block py-2 nav-link">Sobre</a>
               <a href="#skills" class="block py-2 nav-link">Habilidades</a>
               <a href="#projects" class="block py-2 nav-link">Projetos</a>
               <a href="#contact" class="block py-2 nav-link">Contato</a>
             </div>
-            <div>
+            <div class="mobile-theme-btn">
               <button
                 id="theme-toggle-mobile"
                 class="theme-toggle"
@@ -611,6 +631,7 @@
           ></div>
         </div>
 
+        <!-- Skill bars -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <h3 class="text-2xl font-bold mb-6">Habilidades Técnicas</h3>
@@ -697,93 +718,77 @@
           </div>
         </div>
 
-        <<div
-  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
->
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
-    <span>HTML5</span>
-  </div>
+        <!-- Espaçamento entre barras e badges -->
+        <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-html5 text-4xl text-orange-500 mb-2"></i>
+            <span>HTML5</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
-    <span>CSS3</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-css3-alt text-4xl text-blue-500 mb-2"></i>
+            <span>CSS3</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
-    <span>JavaScript</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-js text-4xl text-yellow-400 mb-2"></i>
+            <span>JavaScript</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-react text-4xl text-cyan-400 mb-2"></i>
-    <span>React</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-react text-4xl text-cyan-400 mb-2"></i>
+            <span>React</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
-    <span>Node.js</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
+            <span>Git</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
-    <span>MySQL</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-github text-4xl text-white mb-2"></i>
+            <span>GitHub</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fas fa-code text-4xl text-indigo-400 mb-2"></i>
-    <span>C</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-node-js text-4xl text-green-500 mb-2"></i>
+            <span>Node.js</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
-    <span>WordPress</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fas fa-database text-4xl text-blue-400 mb-2"></i>
+            <span>MySQL</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fas fa-wind text-4xl text-cyan-400 mb-2"></i>
-    <span>Tailwind CSS</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fas fa-code text-4xl text-indigo-400 mb-2"></i>
+            <span>C</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-java text-4xl text-orange-500 mb-2"></i>
-    <span>Java</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-wordpress text-4xl text-blue-500 mb-2"></i>
+            <span>WordPress</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fas fa-microchip text-4xl text-cyan-400 mb-2"></i>
-    <span>Arduino</span>
-  </div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fas fa-wind text-4xl text-cyan-400 mb-2"></i>
+            <span>Tailwind CSS</span>
+          </div>
 
-  <div
-    class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover"
-  >
-    <i class="fab fa-python text-4xl text-yellow-400 mb-2"></i>
-    <span>Python</span>
-  </div>
-</div>
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-java text-4xl text-orange-500 mb-2"></i>
+            <span>Java</span>
+          </div>
+
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fas fa-microchip text-4xl text-cyan-400 mb-2"></i>
+            <span>Arduino</span>
+          </div>
+
+          <div class="flex flex-col items-center p-6 bg-slate-800 rounded-lg card-hover">
+            <i class="fab fa-python text-4xl text-yellow-400 mb-2"></i>
+            <span>Python</span>
+          </div>
         </div>
       </div>
     </section>
@@ -814,19 +819,11 @@
               Plataforma web desenvolvida para conectar clientes e prestadores de serviços.
               O projeto foi construído com HTML, CSS, JavaScript, Tailwind CSS, Python (Flask)
               e MySQL, focando em responsividade, usabilidade e integração com banco de dados.
-
-
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >HTML</span
-                >
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >Bootstrap</span
-                >
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >JavaScript</span
-                >
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">HTML</span>
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Bootstrap</span>
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">JavaScript</span>
               </div>
               <div class="flex space-x-3">
                 <a
@@ -857,16 +854,12 @@
                 fundamentais de desenvolvimento Front-End e experiência do usuário.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >CSS</span
-                >
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >HTML</span
-                >
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">CSS</span>
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">HTML</span>
               </div>
               <div class="flex space-x-3">
                 <a
-                  href=" https://dev-pereiraxs.github.io/Spider/"
+                  href="https://dev-pereiraxs.github.io/Spider/"
                   target="_blank"
                   class="text-primary hover:text-secondary"
                 >
@@ -893,15 +886,9 @@
                 front-end, HTML, CSS e JavaScript e framework com o bootstrap.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >JavaScript</span
-                >
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >HTML</span
-                >
-                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm"
-                  >CSS</span
-                >
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">JavaScript</span>
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">HTML</span>
+                <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">CSS</span>
               </div>
               <div class="flex space-x-3">
                 <a
@@ -1015,9 +1002,7 @@
             <form action="https://formspree.io/f/mkgvnwpg" method="POST">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label for="name" class="block mb-2 font-medium"
-                    >Seu nome</label
-                  >
+                  <label for="name" class="block mb-2 font-medium">Seu nome</label>
                   <input
                     type="text"
                     id="name"
@@ -1027,9 +1012,7 @@
                   />
                 </div>
                 <div>
-                  <label for="email" class="block mb-2 font-medium"
-                    >Seu email</label
-                  >
+                  <label for="email" class="block mb-2 font-medium">Seu email</label>
                   <input
                     type="email"
                     id="email"
@@ -1040,9 +1023,7 @@
                 </div>
               </div>
               <div>
-                <label for="subject" class="block mb-2 font-medium"
-                  >Assunto</label
-                >
+                <label for="subject" class="block mb-2 font-medium">Assunto</label>
                 <input
                   type="text"
                   id="subject"
@@ -1052,9 +1033,7 @@
                 />
               </div>
               <div>
-                <label for="message" class="block mb-2 font-medium"
-                  >Mensagem</label
-                >
+                <label for="message" class="block mb-2 font-medium">Mensagem</label>
                 <textarea
                   id="message"
                   name="message"
@@ -1242,7 +1221,6 @@
         if (mobileToggle)
           mobileToggle.addEventListener("click", function () {
             toggleAndSave();
-
             if (!mobileMenu.classList.contains("hidden"))
               mobileMenu.classList.add("hidden");
           });
